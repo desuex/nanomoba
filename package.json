@@ -1,26 +1,39 @@
 {
   "name": "nanomoba",
-  "version": "0.0.1",
-  "description": "Minimalistic JS MOBA game",
-  "author": {
-    "name": "desuex"
+  "description": "",
+  "readme": "",
+  "repository": "",
+  "version": "0.0.0",
+  "readme": "",
+  "repository": "",
+  
+  "devDependencies": {
+    "bower": "*",
+    "gulp": "*",
+    "gulp-util": "*",
+    "del": "*",
+    "gulp-concat": "*",
+    "gulp-download": "*",
+    "gulp-rename": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "gulp-processhtml": "*",
+    "gulp-jshint": "*",
+    "gulp-uglify": "*",
+    "gulp-connect": "*",
+    "gulp-watch": "*",
+    "browserify": "*",
+    "tiny-lr": "*",
+    "vinyl-source-stream": "*",
+    "gulp-streamify": "*",
+    "watchify": "*",
+    "gulp-if": "*",
+    "vinyl-paths": "*"
   },
-  "license": "MIT",
-  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
-  "repository": {
-    "type": "git",
-    "url": "https://desuex@github.com/desuex/nanomoba.git"
-  },
-  "keywords": [
-    "2d",
-    "HTML5",
-    "WebGL",
-    "canvas",
-    "game",
-    "javascript",
-    "moba"
-  ],
-  "dependencies":{
-    "phaser": ">=2.4.6"
+
+  "scripts": {
+    "post-install": "node ./node_modules/bower/bin/bower install",
+    "start": "node ./node_modules/gulp/bin/gulp.js",
+    "build": "node ./node_modules/gulp/bin/gulp.js build"
   }
 }
