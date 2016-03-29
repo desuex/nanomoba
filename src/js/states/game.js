@@ -29,15 +29,15 @@ Game.prototype = {
     angle = Math.atan2(y - cy, x - cx) * (180 / Math.PI);
     this.testentity.angle = angle;
 
-    dx = x - cx;
-    dy = y - cy;
-    scale = Math.sqrt(dx * dx + dy * dy) / 100;
+    //dx = x - cx;
+    //dy = y - cy;
+    //scale = Math.sqrt(dx * dx + dy * dy) / 100;
 
-    this.testentity.scale.x = scale * 0.6;
-    this.testentity.scale.y = scale * 0.6;
+    //this.testentity.scale.x = scale * 0.6;
+    //this.testentity.scale.y = scale * 0.6;
   },
 
   onInputDown: function () {
-    this.game.state.start('Menu');
+    //this.game.state.start('Menu');
   }
 };
