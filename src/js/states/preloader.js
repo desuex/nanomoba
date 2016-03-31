@@ -20,13 +20,15 @@ Preloader.prototype = {
         this.load.image('wizball', 'assets/sprites/wizball.png');
         this.load.image('asuna_by_vali233', 'assets/sprites/asuna_by_vali233.png');
         this.load.image('terrain','assets/terrain/map.jpg');
+        this.load.image('obstacles','assets/terrain/obstacles.png');
+        this.load.image('blank_map','assets/terrain/blank_map.png');
         this.load.image('player_blue', 'assets/sprites/player_blue.png');
         this.load.image('player_green', 'assets/sprites/player_green.png');
         this.load.image('player_magenta', 'assets/sprites/player_magenta.png');
         this.load.image('player_orange', 'assets/sprites/player_orange.png');
         this.load.image('player_yellow', 'assets/sprites/player_yellow.png');
 
-        this.load.physics('physicsData', 'assets/physics/sprites.json');
+        this.load.physics('physicsData', 'assets/physics/map.json');
     },
 
     create: function () {

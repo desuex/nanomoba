@@ -18,24 +18,38 @@ Game.prototype = {
         //var y = (this.game.height / 2) - 50;
         //this.terrain = new Terrain(this.game, 0, 0, 'terrain');
 
-        this.world.setBounds(0, 0, 2500, 2386);
+        this.world.setBounds(-1250, -2386/2, 2500, 2386);
         this.physics.startSystem(Phaser.Physics.P2JS);
         this.physics.p2.defaultRestitution = 0.9;
-        this.terrain = new Terrain(this.game,0,0,'terrain');
+
+        this.terrain = this.add.sprite(0, 0,'terrain');
+        this.physics.p2.enable(this.terrain,false);
+        this.terrain.body.static=true;
+        this.terrain.body.collideWorldBounds=false;
+        this.terrain.body.clearShapes();
+        this.terrain.body.loadPolygon('physicsData','border2');
+        //this.terrain.body.static=true;
+
+        this.obstacles=this.add.sprite(0, 0,'blank_map');
+        this.physics.p2.enable(this.obstacles,false);
+        this.obstacles.body.collideWorldBounds=false;
+        this.obstacles.body.static=true;
+        this.obstacles.body.clearShapes();
+        this.obstacles.body.loadPolygon('physicsData','obstacles');
+
         //this.terrain.fixedToCamera = true;
-        this.green = new Player(this.game, 530, 530, 'player_green');
+        this.green = new Player(this.game, 0, 0, 'player_green');
         this.blue = new Player(this.game, 100, 200, 'player_blue');
         this.magenta = new Player(this.game, 100, 300, 'player_magenta');
         this.yellow = new Player(this.game, 100, 400, 'player_yellow');
         this.orange = new Player(this.game, 100, 500, 'player_orange');
-        //this.terrain = this.add.sprite(0,0,2500,2386,'terrain');
 
 
 
         //this.green.enableBody = true;
         //this.green.physicsBodyType = Phaser.Physics.P2JS;
         this.physics.p2.enable(this.green,false);
-        this.green.body.setCircle(28);
+        this.green.body.setCircle(5);
         this.camera.follow(this.green);
         this.cursors = this.input.keyboard.createCursorKeys();
 
